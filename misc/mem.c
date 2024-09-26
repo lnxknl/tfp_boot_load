@@ -2,7 +2,7 @@
 
 #include <chaos/mem.h>
 
-void mem_set(void* ptr, u8 fill, u32 size) {
+void mem_set(void* ptr, u8 fill, u32 size) {// @NOTE 
     u32 wfill = (fill << 24) | (fill << 16) | (fill << 8) | fill;
     u32 wsize = ((size & ~(4 - 1)) >> 2);
     u32 bsize = size & (4 - 1);

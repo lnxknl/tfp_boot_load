@@ -13,12 +13,12 @@
 #define KERNEL_PADDING 1000
 extern u32 linker_kernel_end;
 
-void main() {
+void main() {// @NOTE 
 
     kprint("\n\nStarting chaos kernel v2.0\n");
     //boot_start_timer();
 
-    //tftp_init();
+    //tftp_init();// @NOTE 
     //tftp_read_file(&linker_kernel_end + KERNEL_PADDING);
 
     while (1);

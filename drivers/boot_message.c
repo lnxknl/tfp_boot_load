@@ -9,7 +9,7 @@
 
 static char boot_message_buf[BOOT_BUF_SIZE];
 
-void boot_start_timer() {
+void boot_start_timer() {// @NOTE 
     const struct timer_iface* timer = get_timer();
     if (!timer) {
         panic("Wrong");

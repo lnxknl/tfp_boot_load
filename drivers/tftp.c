@@ -611,7 +611,7 @@ void tftp_request(const char* file_name, const char* block_size) {
 }
 
 // Tries to read the given file from TFTP server. This will write the file to `dest`
-i32 tftp_read_file(void* dest) {
+i32 tftp_read_file(void* dest) {// @NOTE 
 
     // Clear the server TFTP port
     tftp_server_port = 0;
@@ -667,7 +667,7 @@ i32 tftp_read_file(void* dest) {
         free_netbuf(buf);
     }
 
-    boot_message("Starting new kernel at {p}\n", dest);
+    boot_message("Starting new kernel at {p}\n", dest);// @NOTE 
 
     // We have a new image in memory - execute it
     void (*new_kernel)() = (void *)((u32)dest);
@@ -682,7 +682,7 @@ void tftp_init() {
     netbuf_init();
 
     // Call the device specific NIC initialization routine
-    nic_init();
+    nic_init();// @NOTE 
 
     // Update our MAC address
     u8 mac[6];
